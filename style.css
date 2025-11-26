@@ -1,6 +1,3 @@
-/* === PRODUCTION READY & AESTHETIC STYLES === */
-
-/* 1. Variables for Consistency */
 :root {
     --primary-green: #88cc44;
     --primary-glow: rgba(136, 204, 68, 0.4);
@@ -13,7 +10,6 @@
     --transition-speed: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* 2. Global Resets & Scrollbar */
 * {
     margin: 0;
     padding: 0;
@@ -24,7 +20,6 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Custom Scrollbar */
 ::-webkit-scrollbar {
     width: 8px;
 }
@@ -54,7 +49,6 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-/* 3. Typography */
 h1 {
     text-align: center;
     color: var(--primary-green);
@@ -76,7 +70,6 @@ h2 {
     text-transform: uppercase;
 }
 
-/* 4. Main Glass Container */
 .container {
     width: 100%;
     max-width: 1200px;
@@ -118,7 +111,6 @@ h2 {
     opacity: 0.5;
 }
 
-/* Reset .match-info */
 .match-info {
     background: transparent;
     border: none;
@@ -131,7 +123,6 @@ h2 {
     align-items: center;
 }
 
-/* Match Status Badge */
 .match-status {
     width: 100%;
     max-width: 700px;
@@ -165,12 +156,11 @@ h2 {
     font-weight: 600;
 }
 
-/* 5. Form Elements & Inputs */
 .team-name {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    gap: 5rem; /* INCREASED from 2rem to 5rem to separate teams */
+    gap: 5rem;
     flex-wrap: wrap;
     width: 100%;
     margin-bottom: 30px;
@@ -193,12 +183,12 @@ h2 {
     opacity: 0.9;
 }
 
-/* PAGE 2 SPECIFIC: WIDER ROSTER CARDS */
+
 .team.player-roster {
-    flex: 1; /* Grow to fill space */
-    min-width: 320px; /* Much wider minimum */
+    flex: 1;
+    min-width: 320px; 
     max-width: 500px; 
-    background: rgba(30, 30, 30, 0.6); /* Semi-transparent card */
+    background: rgba(30, 30, 30, 0.6);
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 20px;
     padding: 30px;
@@ -248,7 +238,6 @@ select {
     cursor: pointer;
 }
 
-/* Updated Player Names to look like standard inputs */
 .playernames {
     margin-bottom: 12px;
     background: rgba(255, 255, 255, 0.03);
@@ -266,7 +255,6 @@ select {
     padding-left: 20px;
 }
 
-/* 6. Buttons */
 .nextbutton-box {
     display: flex;
     justify-content: center;
@@ -308,7 +296,6 @@ select {
     box-shadow: 0 5px 10px rgba(136, 204, 68, 0.3);
 }
 
-/* 7. Scoreboard Dashboard (Page 3) */
 .main-score-box {
     display: flex;
     justify-content: center;
@@ -383,7 +370,6 @@ select {
     text-align: center;
 }
 
-/* 8. Active Players Section */
 .active-players {
     display: flex;
     justify-content: center;
@@ -444,19 +430,15 @@ select {
     border-radius: 6px;
 }
 
-/* 9. Summary Tables & Layout Fixes */
-
-/* INNINGS BLOCKS - Reintroduced to separate 1st and 2nd innings */
 .innings-block {
     width: 100%;
     margin-bottom: 40px;
-    background: rgba(255,255,255,0.02); /* Very subtle distinction */
+    background: rgba(255,255,255,0.02);
     border-radius: 20px;
     padding: 20px;
     border: 1px solid rgba(255,255,255,0.03);
 }
 
-/* SPLIT ROW - Restores the side-by-side layout for Batting/Bowling */
 .summary-split-row {
     display: flex;
     gap: 20px;
@@ -558,7 +540,6 @@ select {
     to { transform: scale(1); opacity: 1; }
 }
 
-/* 10. Mobile Responsiveness */
 @media (max-width: 768px) {
     .setup-container {
         padding: 30px 20px;
@@ -591,4 +572,5 @@ select {
     }
     
     .side-stat-box h2 { margin: 0; }
+
 }
