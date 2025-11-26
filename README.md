@@ -12,7 +12,7 @@
 
 The application is deployed and ready to use. Click the link below to start scoring:
 
-👉 **[vedant102-code.github.io/Cricket-Scorecard/](https://vedant102-code.github.io/Cricket-Scorecard/)**
+👉 **[cricket-scorecard-main.vercel.app/](https://cricket-scorecard-main.vercel.app/)**
 
 ---
 
