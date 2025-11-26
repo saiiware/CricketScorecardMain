@@ -1,0 +1,594 @@
+/* === PRODUCTION READY & AESTHETIC STYLES === */
+
+/* 1. Variables for Consistency */
+:root {
+    --primary-green: #88cc44;
+    --primary-glow: rgba(136, 204, 68, 0.4);
+    --glass-bg: rgba(20, 20, 20, 0.85);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --glass-highlight: rgba(255, 255, 255, 0.15);
+    --text-main: #ffffff;
+    --text-muted: #cccccc;
+    --font-family: "Poppins", sans-serif;
+    --transition-speed: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 2. Global Resets & Scrollbar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.3);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--primary-green);
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #76ff03;
+}
+
+body {
+    background-image: url('score4.png');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    min-height: 100vh;
+    font-family: var(--font-family);
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    padding: 20px;
+    color: var(--text-main);
+    -webkit-font-smoothing: antialiased;
+}
+
+/* 3. Typography */
+h1 {
+    text-align: center;
+    color: var(--primary-green);
+    margin-bottom: 0.5rem;
+    font-size: clamp(2rem, 5vw, 2.8rem);
+    font-weight: 700;
+    letter-spacing: -1px;
+    text-shadow: 0 4px 12px rgba(0,0,0,0.6);
+    text-transform: uppercase;
+}
+
+h2 {
+    color: var(--text-muted);
+    text-align: center;
+    margin-bottom: 2.5rem;
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+/* 4. Main Glass Container */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    padding: 1rem;
+    animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.setup-container {
+    background-color: var(--glass-bg);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    
+    border: 1px solid var(--glass-border);
+    border-top: 1px solid var(--glass-highlight); 
+    
+    padding: 60px 40px;
+    border-radius: 2rem;
+    box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.8);
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.setup-container::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--primary-green), transparent);
+    opacity: 0.5;
+}
+
+/* Reset .match-info */
+.match-info {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    margin-bottom: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Match Status Badge */
+.match-status {
+    width: 100%;
+    max-width: 700px;
+    margin-bottom: 30px;
+    padding: 15px 25px;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.match-status h3 {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--primary-green);
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.teams-status {
+    font-size: 0.95rem;
+    color: #e0e0e0;
+    font-weight: 300;
+}
+
+.teams-status strong {
+    color: #fff;
+    font-weight: 600;
+}
+
+/* 5. Form Elements & Inputs */
+.team-name {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 5rem; /* INCREASED from 2rem to 5rem to separate teams */
+    flex-wrap: wrap;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.team, .over-elements, .batting-team-box {
+    background: transparent;
+    padding: 0;
+    width: 280px;
+    text-align: center;
+}
+
+.team h3, .over-elements h3, .batting-team-box h3 {
+    margin-bottom: 15px !important;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--primary-green);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    opacity: 0.9;
+}
+
+/* PAGE 2 SPECIFIC: WIDER ROSTER CARDS */
+.team.player-roster {
+    flex: 1; /* Grow to fill space */
+    min-width: 320px; /* Much wider minimum */
+    max-width: 500px; 
+    background: rgba(30, 30, 30, 0.6); /* Semi-transparent card */
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.team.player-roster h3 {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 15px;
+    margin-bottom: 25px !important;
+    text-align: center;
+}
+
+.info-input-box, .over-input-box, select, .playernames {
+    width: 100%;
+    padding: 16px 20px;
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 1rem;
+    font-family: var(--font-family);
+    transition: var(--transition-speed);
+    text-align: center;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.info-input-box:focus, .over-input-box:focus, select:focus, .playernames:focus {
+    outline: none;
+    background: rgba(0, 0, 0, 0.5);
+    border-color: var(--primary-green);
+    box-shadow: 0 0 0 4px rgba(136, 204, 68, 0.15);
+    transform: translateY(-1px);
+}
+
+::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+    font-weight: 300;
+}
+
+select {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%2388cc44%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px top 50%;
+    background-size: 12px auto;
+    cursor: pointer;
+}
+
+/* Updated Player Names to look like standard inputs */
+.playernames {
+    margin-bottom: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid transparent;
+    border-radius: 8px;
+    padding: 12px 15px;
+    text-align: left;
+    box-shadow: none;
+}
+
+.playernames:focus {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--primary-green);
+    box-shadow: none;
+    padding-left: 20px;
+}
+
+/* 6. Buttons */
+.nextbutton-box {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 40px;
+    width: 100%;
+}
+
+.btn-grad, .btn-grad-p3 {
+    background: linear-gradient(135deg, #7fbe69 0%, #88cc44 50%, #68a832 100%);
+    color: #1a1a1a;
+    font-weight: 700;
+    border: none;
+    text-align: center;
+    text-transform: uppercase;
+    transition: var(--transition-speed);
+    background-size: 200% auto;          
+    box-shadow: 0 10px 20px -5px rgba(136, 204, 68, 0.4);
+    border-radius: 50px;
+    cursor: pointer;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+    border-top: 1px solid rgba(255,255,255,0.4);
+}
+
+.btn-grad { padding: 16px 50px; font-size: 1rem; min-width: 160px; }
+.btn-grad-p3 { margin: 6px; padding: 12px 25px; font-size: 0.9rem; flex: 1; min-width: 60px; }
+
+.btn-grad:hover, .btn-grad-p3:hover { 
+    background-position: right center; 
+    transform: translateY(-2px);
+    box-shadow: 0 15px 30px -5px rgba(136, 204, 68, 0.6);
+    color: #000;
+}
+
+.btn-grad:active, .btn-grad-p3:active { 
+    transform: translateY(1px) scale(0.98); 
+    box-shadow: 0 5px 10px rgba(136, 204, 68, 0.3);
+}
+
+/* 7. Scoreboard Dashboard (Page 3) */
+.main-score-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    width: 100%;
+    flex-wrap: wrap;
+    margin-top: 15px;
+}
+
+.main-score-disp {
+    background: linear-gradient(180deg, rgba(30,30,30,0.6) 0%, rgba(20,20,20,0.8) 100%);
+    border: 1px solid rgba(255,255,255,0.05);
+    padding: 30px;
+    width: 280px;
+    border-radius: 24px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 20px 40px -10px rgba(0,0,0,0.5);
+}
+
+.main-score-disp h1 {
+    font-size: 3.5rem;
+    color: #fff;
+    margin: 0;
+    line-height: 1;
+    font-feature-settings: "tnum";
+    font-variant-numeric: tabular-nums;
+}
+
+.main-score-disp h3 {
+    color: #888;
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-top: 5px;
+}
+
+.side-stat-box {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255,255,255,0.05);
+    padding: 20px;
+    width: 140px;
+    height: 130px;
+    border-radius: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.side-stat-box:hover {
+    background: rgba(255, 255, 255, 0.06);
+    transform: translateY(-2px);
+}
+
+.side-stat-box h4 {
+    margin: 0;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--primary-green);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
+
+.side-stat-box h2 {
+    margin: 8px 0 0 0;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #fff;
+    text-align: center;
+}
+
+/* 8. Active Players Section */
+.active-players {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 25px;
+    margin-top: 40px;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.active-batsmen, .active-bowler {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255,255,255,0.05);
+    padding: 25px;
+    width: 360px;
+    border-radius: 20px;
+    min-height: 200px;
+}
+
+.active-batsmen h3, .active-bowler h3 {
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 15px;
+    text-align: center;
+    color: var(--primary-green);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.player-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 15px;
+    background: rgba(255,255,255,0.02);
+    border-radius: 10px;
+    margin-bottom: 8px;
+    transition: background 0.2s;
+}
+
+.player-row:hover {
+    background: rgba(255,255,255,0.05);
+}
+
+.player-name {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #eee;
+}
+
+.player-stats {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #fff;
+    background: rgba(255,255,255,0.1);
+    padding: 4px 10px;
+    border-radius: 6px;
+}
+
+/* 9. Summary Tables & Layout Fixes */
+
+/* INNINGS BLOCKS - Reintroduced to separate 1st and 2nd innings */
+.innings-block {
+    width: 100%;
+    margin-bottom: 40px;
+    background: rgba(255,255,255,0.02); /* Very subtle distinction */
+    border-radius: 20px;
+    padding: 20px;
+    border: 1px solid rgba(255,255,255,0.03);
+}
+
+/* SPLIT ROW - Restores the side-by-side layout for Batting/Bowling */
+.summary-split-row {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.summary-header {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255,255,255,0.05);
+    padding: 30px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.team-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.team-score {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--primary-green);
+    text-shadow: 0 0 20px rgba(136, 204, 68, 0.2);
+}
+
+.scorecard-section {
+    flex: 1;
+    min-width: 300px;
+    background: rgba(20, 20, 20, 0.4); 
+    padding: 25px;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.score-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 4px;
+}
+
+.score-table th {
+    font-weight: 600;
+    color: #888;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    padding: 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.score-table td {
+    background: rgba(255,255,255,0.02);
+    padding: 12px 10px;
+    font-size: 0.9rem;
+    color: #ddd;
+    text-align: center;
+}
+
+.score-table tr td:first-child { border-top-left-radius: 8px; border-bottom-left-radius: 8px; text-align: left;}
+.score-table tr td:last-child { border-top-right-radius: 8px; border-bottom-right-radius: 8px; }
+
+.extras-display {
+    margin-top: 15px;
+    text-align: right;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    padding-right: 10px;
+    width: 100%;
+}
+
+.winner-banner {
+    background: linear-gradient(90deg, #000 0%, #1a1a1a 100%);
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    border-radius: 16px;
+    margin-bottom: 40px;
+    font-size: 1.4rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    border: 2px solid var(--primary-green);
+    letter-spacing: 1px;
+    width: 100%;
+    animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes popIn {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* 10. Mobile Responsiveness */
+@media (max-width: 768px) {
+    .setup-container {
+        padding: 30px 20px;
+    }
+    
+    .team-name {
+        gap: 20px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    h1 { font-size: 2rem; }
+    
+    .main-score-box, .active-players, .summary-split-row {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .active-batsmen, .active-bowler, .scorecard-section, .main-score-disp, .side-stat-box, .team, .batting-team-box {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .side-stat-box {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        height: auto;
+        padding: 15px 25px;
+    }
+    
+    .side-stat-box h2 { margin: 0; }
+}

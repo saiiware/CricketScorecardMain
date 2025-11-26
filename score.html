@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <link rel="icon" href="favicon.ico" type="image/x-icon"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Michroma&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title>Cricket Scorecard</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>SCORECARD</h1>
+        <div class="setup-container">
+
+            <div class="match-info">
+                <h2 id="match-header"></h2>
+                
+                <!-- Match Status Section -->
+                <div class="match-status">
+                    <h3 id="innings-label">1st Innings</h3>
+                    <p class="teams-status">
+                        Batting: <strong id="batting-team-name">...</strong> 
+                        <span style="margin: 0 10px;">|</span> 
+                        Bowling: <strong id="bowling-team-name">...</strong>
+                    </p>
+                </div>
+
+                <!-- Main Score Area -->
+                <div class="main-score-box">
+                    
+                    <!-- Left: Run Rate -->
+                    <div class="side-stat-box">
+                        <h4>CRR</h4>
+                        <h2 id="crr-display">0.00</h2>
+                    </div>
+
+                    <!-- Center: Main Score -->
+                    <div class="main-score-disp">
+                        <h1 id="score-display">0/0</h1>
+                        <h3 id="overs-display">(0.0)</h3>
+                    </div>
+
+                    <!-- Right: Projected Score -->
+                    <div class="side-stat-box">
+                        <!-- CHANGED HERE -->
+                        <h4>Projected Score</h4>
+                        <h2 id="projected-display">0</h2>
+                    </div>
+
+                </div>
+                
+                <!-- Player Selection Area -->
+                <div class="active-players">
+                    <div class="active-batsmen" id="batsmen-container">
+                        <h3>Batting</h3>
+                        <div id="striker-slot" class="player-slot"></div>
+                        <div id="non-striker-slot" class="player-slot"></div>
+                    </div>
+                    <div class="active-bowler" id="bowler-container">
+                        <h3>Bowling</h3>
+                        <div id="bowler-slot" class="player-slot"></div>
+                    </div>
+                </div>
+
+                <!-- Start Button -->
+                <div id="start-match-btn-container" style="text-align: center; margin-top: 20px; display: none;">
+                    <button class="btn-grad" onclick="startMatch()">Start Match</button>
+                </div>
+
+                <br>
+
+                <!-- Scoring Controls -->
+                <div id="scoring-controls" class="bg-white rounded-lg shadow-lg p-5" style="pointer-events: none; opacity: 0.5;">
+                    <div>
+                        <button class="btn-grad-p3" id="btn0Run" onclick = "updateScore(0);">0</button>
+                        <button class="btn-grad-p3" id="btn1Run" onclick = "updateScore(1);">1</button>
+                        <button class="btn-grad-p3" id="btn2Run" onclick = "updateScore(2);">2</button>
+                        <button class="btn-grad-p3" id="btn3Run" onclick = "updateScore(3);">3</button>
+                        <button class="btn-grad-p3" id="btn4Run" onclick = "updateScore(4);">4</button>
+                        <button class="btn-grad-p3" id="btn5Run" onclick = "updateScore(5);">5</button>
+                        <button class="btn-grad-p3" id="btn6Run" onclick = "updateScore(6);">6</button>
+                        <button class="btn-grad-p3" id="btn7Run" onclick = "updateScore(7);">7</button>
+                    </div>
+                    <div>
+                        <button class="btn-grad-p3" id="btnWicket" onclick = "updateScore('W');">Wicket</button>
+                        <button class="btn-grad-p3" id="btnWD" onclick = "updateScore('WD');">WD</button>
+                        <button class="btn-grad-p3" id="btnNB" onclick = "updateScore('NB');">NB</button>
+                    </div>
+                    <div>
+                        <button class="btn-grad-p3" id="rstScr" onclick = "resetScore()">Restart Match</button>
+                        <button class="btn-grad-p3" id="undoScr" onclick= "undoScore(score.lastResult)">Undo</button>
+                    </div>
+                </div> 
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>

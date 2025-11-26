@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <link rel="icon" href="favicon.ico" type="image/x-icon"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Michroma&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>Innings Summary</title>
+</head>
+<body>
+    <div class="container">
+        <h1>INNINGS SUMMARY</h1>
+        
+        <div class="setup-container">
+            
+            <div class="summary-header">
+                <div class="team-title" id="summary-team-name">Team Name</div>
+                <div class="team-score" id="summary-score">0-0 (0.0)</div>
+            </div>
+
+            <!-- Changed to use the split row layout -->
+            <div class="summary-split-row">
+                <div class="scorecard-section">
+                    <h3>Batting</h3>
+                    <div class="table-responsive">
+                        <table class="score-table">
+                            <thead>
+                                <tr>
+                                    <th style="text-align: left;">Batter</th>
+                                    <th>R</th>
+                                    <th>B</th>
+                                    <th>4s</th>
+                                    <th>6s</th>
+                                    <th>SR</th>
+                                </tr>
+                            </thead>
+                            <tbody id="batting-tbody"></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="scorecard-section">
+                    <h3>Bowling</h3>
+                    <div class="table-responsive">
+                        <table class="score-table">
+                            <thead>
+                                <tr>
+                                    <th style="text-align: left;">Bowler</th>
+                                    <th>O</th>
+                                    <th>R</th>
+                                    <th>W</th>
+                                    <th>Econ</th>
+                                </tr>
+                            </thead>
+                            <tbody id="bowling-tbody"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="extras-display">
+                Extras: <span id="summary-extras">0</span>
+            </div>
+            
+            <div class="target-display">
+                TARGET: <span id="summary-target">0</span>
+            </div>
+
+            <div class="nextbutton-box" style="margin-top: 30px;">
+                <button class="btn-grad" onclick="startSecondInnings()">Start 2nd Innings</button>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

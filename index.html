@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket Scorecard</title>
+    <script src="script.js" defer></script>
+    <link rel="icon" href="favicon.ico" type="image/x-icon"> 
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Michroma&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <div class="container">
+        <h1>SCORECARD</h1>
+        
+        <div class="setup-container">
+
+            <div class="match-info">
+                <h2>Match Setup</h2>
+                
+                <!-- Team Name Boxes -->
+                <div class="team-name">
+                    <div class="team">
+                        <h3>Team 1 Name</h3>
+                        <input type="text" placeholder="Name" class="info-input-box" id="team1-name">
+                    </div>
+                    <div class="team">
+                        <h3 class="team1">Team 2 Name</h3>
+                        <input type="text" placeholder="Name" class="info-input-box" id="team2-name">
+                    </div>
+                </div>
+                
+                <!-- Overs Box -->
+                <div class="over-box">
+                    <div class="over-elements">
+                        <h3>Number of Overs</h3>
+                        <!-- Removed the <p> tag here so spacing matches exactly -->
+                        <input type="number" name="overs" class="over-input-box" placeholder="Overs" id="num-overs">
+                    </div>
+                </div>
+                
+            </div>
+        
+            <div class="nextbutton-box">
+                <div>
+                    <button type="submit" class="btn-grad" id="next-button-page1">Next</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
